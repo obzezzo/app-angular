@@ -1,0 +1,4 @@
+.bg-gradient-primary-to-secondary {
+  background: #1e30f3;
+  background: linear-gradient(135deg, #000a7b 0%, #bb00d3 100%);
+}

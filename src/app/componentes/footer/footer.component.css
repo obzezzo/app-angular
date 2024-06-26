@@ -1,0 +1,43 @@
+#footer {
+  color: #fff;
+  font-size: 14px;
+  background: darkblue;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: darkblue;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  font-size: 13px;
+}
+
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #170bff;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: #8100d2;
+  color: #fff;
+  text-decoration: none;
+}

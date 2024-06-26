@@ -1,0 +1,232 @@
+<div class="container pb-5">
+  <main>
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt=""
+        width="72" height="57">
+      <h2 class="display-6 text-body-emphasis fw-bold">Formulario para un Compra</h2>
+      <p class="lead">A continuación se muestra un formulario de ejemplo construido enteramente con los controles de
+        formulario de Bootstrap. Cada grupo de formularios requeridos tiene un estado de validación que puede activarse
+        al intentar enviar el formulario sin completarlo.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Tu carrito</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Nombre del producto</h6>
+              <small class="text-body-secondary">Descripción</small>
+            </div>
+            <span class="text-body-secondary">$12</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Segundo producto</h6>
+              <small class="text-body-secondary">Descripción</small>
+            </div>
+            <span class="text-body-secondary">$8</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Tercer item</h6>
+              <small class="text-body-secondary">Descripción</small>
+            </div>
+            <span class="text-body-secondary">$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+            <div class="text-success">
+              <h6 class="my-0">Código de promoción</h6>
+              <small>código ejemplo</small>
+            </div>
+            <span class="text-success">−$5</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (USD)</span>
+            <strong>$20</strong>
+          </li>
+        </ul>
+
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Codigo de promo">
+            <button type="submit" class="btn btn-secondary">Canjear</button>
+          </div>
+        </form>
+
+        <div>
+          <p>
+            <strong>Nombre: </strong>{{datosFormulario.firstName | uppercase}}<br>
+            <strong>apellido: </strong>{{datosFormulario.lastName | uppercase}}<br>
+            <strong>Usuario: </strong>{{datosFormulario.user | uppercase}}<br>
+            <strong>E-mail: </strong>{{datosFormulario.email | uppercase}}<br>
+            <strong>Dirección: </strong>{{datosFormulario.address | uppercase}}
+          </p>
+        </div>
+
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Datos de facturación</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" name="firstName" placeholder="" [(ngModel)]="datosFormulario.firstName" required="">
+              <div class="invalid-feedback">
+                Primer nombre es requerido.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input type="text" class="form-control" name="lastName" placeholder="" [(ngModel)]="datosFormulario.lastName" required="">
+              <div class="invalid-feedback">
+                Apellido es requerido
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" name="user" placeholder="Username" [(ngModel)]="datosFormulario.user" required="">
+                <div class="invalid-feedback">
+                  username es requerido
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+              <input type="email" class="form-control" name="email" placeholder="you@example.com" [(ngModel)]="datosFormulario.email">
+              <div class="invalid-feedback">
+                Introduzca una dirección de correo electrónico válida para recibir actualizaciones de envío.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Dirección</label>
+              <input type="text" class="form-control" name="address" placeholder="1234 Calle principal" [(ngModel)]="datosFormulario.address" required="">
+              <div class="invalid-feedback">
+                Introduzca su dirección de envío.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">Dirección 2 <span
+                  class="text-body-secondary">(Opcional)</span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Suite o apartamento">
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Pais</label>
+              <select class="form-select" id="country" required="">
+                <option value="">Escoger...</option>
+                <option>España</option>
+                <option>Ecuador</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor escoge un pais.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">Provincia</label>
+              <select class="form-select" id="state" required="">
+                <option value="">Escoger...</option>
+                <option>Provincia 1</option>
+                <option>Provincia 2</option>
+                <option>Provincia 3</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Código postal</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required="">
+              <div class="invalid-feedback">
+                Código postal requerido
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">La dirección de envío es la misma que la de
+              facturación</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Guarde esta información para la próxima vez</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Pago</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+              <label class="form-check-label" for="credit">Tarjeta de crédito</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="debit">Tarjeta de crédito</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Nombre en tarjeta</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-body-secondary">Nombre y apellidos que figuran en la tarjeta</small>
+              <div class="invalid-feedback">
+                Nombre en tarjeta es requerido
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Número de tarjeta de crédito</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                Número de tarjeta de crédito es requerido
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Caducidad</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Fecha de caducidad requeridos
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Código de seguridad es requerido
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Continuar con la compra</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
